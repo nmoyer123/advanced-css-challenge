@@ -1,0 +1,109 @@
+:root {
+    --font-family: 'Nunito', sans-serif;
+    --text-color: #333;
+    --header-footer-bg-color: #343a40;
+    --font-size-large: 1.75rem;
+    --border-radius: 10px;
+    --project-bg-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: bisque;
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--header-footer-bg-color);
+    border-bottom: 3px solid black; /* More pronounced border */
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin: 0; /* Reset default margin */
+}
+
+nav ul li a {
+    font-weight: bold;
+    font-size: 20px;
+    color: white; /* Improved contrast */
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color and background */
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #007bff; /* Use primary color for hover/focus */
+    color: white;
+    border-radius: var(--border-radius); /* Corrected property value */
+}
+
+.section-title {
+    font-size: var(--font-size-large);
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-bg {
+    margin: 20px;
+    padding: 40px 20px;
+    color: white;
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* Increased height for better visibility */
+    text-transform: uppercase;
+    font-weight: bold;
+    background-blend-mode: overlay; /* Ensure text is readable */
+    background-color: var(--project-bg-color); /* Overlay color for readability */
+}
+
+/* Unique background images for each project */
+#surf-report { background-image: url('path/to/your/surf-report-image.jpg'); }
+#calculator { background-image: url('path/to/your/calculator-image.jpg'); }
+#pastel-puzzle { background-image: url('path/to/your/pastel-puzzle-image.jpg'); }
+#led-wall { background-image: url('path/to/your/led-wall-image.jpg'); }
+#run-buddy { background-image: url('path/to/your/run-buddy-image.jpg'); }
+
+.project-bg:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        justify-content: center;
+    }
+
+    .project-bg {
+        flex-basis: calc(100% - 40px); /* Adjust project size on smaller screens */
+        margin: 10px; /* Reduce margin on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 1rem;
+        margin: 0.25rem 0;
+    }
+}
